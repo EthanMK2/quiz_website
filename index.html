@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ethan's Quiz Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <h1>Ethan's Quiz Website</h1>
+    <h2>Welcome to my quiz website.</h2>
+    <div id="existing-quizzes">
+      <label for="existing">Take a Quiz</label>
+      <ul class="quiz-list">
+        <li><button onclick="location.href='quizMenu.html'" id="geography">Geography</button></li>
+        <li><button onclick="location.href='quizMenu.html'" id="history">History</button></li>
+        <li><button onclick="location.href='quizMenu.html'" id="french">French Language</button></li>
+      </ul>
+    </div>
+    <div id="create-quiz">
+      <label for="create">Make a Quiz</label>
+      <br>
+      <button>Create 5 Question Quiz</button>
+      <br>
+      <button>Create 10 Question Quiz</button>
+      <br>
+      <button>Create 15 Question Quiz</button>
+    </div>
+    <div id="score-el">
+      <label for="score">Score</label>
+      <p id="correct">0</p>
+      <hr id="divider">
+      <p id="attempted">0</p>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

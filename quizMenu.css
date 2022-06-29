@@ -1,0 +1,25 @@
+body {
+    text-align: center;
+    background-color: aliceblue;
+}
+
+h1 {
+    color: olive;
+}
+
+ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+li {
+    text-align: center;
+}
+
+.question-el {
+
+}
+
+.answer-el {
+    
+}
