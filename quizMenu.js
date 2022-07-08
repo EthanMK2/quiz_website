@@ -1,6 +1,6 @@
 
 const standardQuizzes = ["geography", "history", "french", "movies", "books"]
-const quizEl = document.getElementById("quiz-questions-el")
+const quizEl = document.getElementById("quiz-el")
 let createdQuizzes = ["topology"]  // make from localStorage automatically
 
 let standardPackage = localStorage.getItem("standardPackage")
@@ -14,9 +14,8 @@ console.log(standardPackage)
 questions = Object.values(standardPackage[selectedQuiz])
 htmlQuizData = ""
 for (let i = 0; i < questions.length; i++) {
-    
+
     slots = [1, 2, 3, 4]
-    slots.flat()
     orderOfQuestions = []
     while (slots.length != 0) {
         let randomIndex = Math.floor(Math.random() * slots.length)
@@ -53,11 +52,14 @@ for (let i = 0; i < questions.length; i++) {
 
     htmlQuizData += `
     <div class="question-div-el">
-        <li class="question-el">${questions[i].question} 
-            <li class="answer-el">${slotOne}</li>
-            <li class="answer-el">${slotTwo}</li>
-            <li class="answer-el">${slotThree}</li>
-            <li class="answer-el">${slotFour}</li>
+        
+        <li class="question-el"><p class="question-text">${questions[i].question}</p>
+            <ul class="answers-ul-el">
+            <li class="answer-el"> <input type="radio" name="${i}">${slotOne}</input> </li>
+            <li class="answer-el"> <input type="radio" name="${i}">${slotTwo}</input> </li>
+            <li class="answer-el"> <input type="radio" name="${i}">${slotThree}</input> </li>
+            <li class="answer-el"> <input type="radio" name="${i}">${slotFour}</input> </li>
+            </ul>
         </li>
     </div>
     `
