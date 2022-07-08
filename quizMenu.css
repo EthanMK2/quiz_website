@@ -1,6 +1,6 @@
 body {
-    text-align: center;
     background-color: aliceblue;
+    text-align: center;
 }
 
 h1 {
@@ -13,13 +13,20 @@ ul {
 }
 
 li {
-    text-align: center;
+    max-width: fit-content;
+}
+
+.question-div-el {
+    padding: 20px;
 }
 
 .question-el {
-
+    background-color: green;
+    padding-bottom: 10px;
+    margin: auto;
 }
 
 .answer-el {
-    
+    background-color: green;
+    margin: auto;
 }

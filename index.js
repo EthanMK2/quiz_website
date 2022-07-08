@@ -28,7 +28,7 @@ standardPackage = {
             wrongs: ["Atlas", "Appalacian", "Rockies"],
         },
         questionTwo: {
-            question: "What body of water does Russia border to its south west?",
+            question: "What body of water borders south west of Russia?",
             answer: "Black Sea",
             wrongs: ["Baltic Sea", "South China Sea", "Mediterranean Sea"]
         }

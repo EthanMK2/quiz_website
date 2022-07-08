@@ -1,26 +1,22 @@
 
 const standardQuizzes = ["geography", "history", "french", "movies", "books"]
 const quizEl = document.getElementById("quiz-questions-el")
-let createdQuizzes = ["topology"]
+let createdQuizzes = ["topology"]  // make from localStorage automatically
 
 let standardPackage = localStorage.getItem("standardPackage")
 standardPackage = JSON.parse(standardPackage)
-
-// console.log(standardPackage)
-// console.log(Object.values(standardPackage.geography))
-// use currentQuiz to display questions from standard quizzes or custom quizzez
-
 
 let selectedQuiz = sessionStorage.getItem("currentQuiz")
 console.log(selectedQuiz)
 console.log(standardPackage)
 
-// prepares quiz string for innerHTML. makes and reserves slots of 4 option questions for random placement
+// prepares quiz string for innerHTML. makes and reserves slots for 4 option questions using random placement
 questions = Object.values(standardPackage[selectedQuiz])
 htmlQuizData = ""
 for (let i = 0; i < questions.length; i++) {
     
     slots = [1, 2, 3, 4]
+    slots.flat()
     orderOfQuestions = []
     while (slots.length != 0) {
         let randomIndex = Math.floor(Math.random() * slots.length)
@@ -56,12 +52,14 @@ for (let i = 0; i < questions.length; i++) {
     }
 
     htmlQuizData += `
-    <li>${questions[i].question} 
-        <li>${slotOne}</li>
-        <li>${slotTwo}</li>
-        <li>${slotThree}</li>
-        <li>${slotFour}</li>
-    </li>
+    <div class="question-div-el">
+        <li class="question-el">${questions[i].question} 
+            <li class="answer-el">${slotOne}</li>
+            <li class="answer-el">${slotTwo}</li>
+            <li class="answer-el">${slotThree}</li>
+            <li class="answer-el">${slotFour}</li>
+        </li>
+    </div>
     `
 }
 
@@ -71,6 +69,7 @@ quizEl.innerHTML = htmlQuizData
 // make basic quiz first
 // make function that dynamically goes through each question until finished
 
+// will be needed for "questions" variable
 function findQuiz(word) {
     for (let i = 0; i < standardQuizzes.length; i++) {
         if (word === standardQuizzes[i]) {
