@@ -18,19 +18,15 @@ for (let i = 0; i < questions.length; i++) {
     slots = [1, 2, 3, 4]
     orderOfQuestions = []
     while (slots.length != 0) {
-        let randomIndex = Math.floor(Math.random() * slots.length)
-        let randomSlot = slots[randomIndex]
+        const randomIndex = Math.floor(Math.random() * slots.length)
+        const randomSlot = slots[randomIndex]
         console.log(randomSlot)
         orderOfQuestions.push(randomSlot)
         slots.splice(randomIndex, 1)
     }
 
     console.log("ORDER:" + orderOfQuestions)
-    let options = []
-    options.push(questions[i].answer)
-    options.push(questions[i].wrongs[0])
-    options.push(questions[i].wrongs[1])
-    options.push(questions[i].wrongs[2])
+    const options = [questions[i].answer, questions[i].wrongs[0], questions[i].wrongs[1], questions[i].wrongs[2]]
 
     for (let k = 0; k < orderOfQuestions.length; k++) {
         num = orderOfQuestions[k]
@@ -55,10 +51,26 @@ for (let i = 0; i < questions.length; i++) {
         
         <li class="question-el"><p class="question-text">${questions[i].question}</p>
             <ul class="answers-ul-el">
-            <li class="answer-el"> <input type="radio" name="${i}">${slotOne}</input> </li>
-            <li class="answer-el"> <input type="radio" name="${i}">${slotTwo}</input> </li>
-            <li class="answer-el"> <input type="radio" name="${i}">${slotThree}</input> </li>
-            <li class="answer-el"> <input type="radio" name="${i}">${slotFour}</input> </li>
+                <li class="answer-el"> 
+                    <label class="answer-label">
+                        <input type="radio" name="${i}" id="${i}0"> <p>${slotOne}</p>
+                    </label>
+                </li>
+                <li class="answer-el">
+                    <label class="answer-label">
+                        <input type="radio" name="${i}"> <p>${slotTwo}</p>
+                    </label>
+                </li>
+                <li class="answer-el"> 
+                    <label class="answer-label">
+                        <input type="radio" name="${i}"> <p>${slotThree}</p>
+                    </label>
+                </li>
+                <li class="answer-el">
+                    <label class="answer-label">
+                        <input type="radio" name="${i}"> <p>${slotFour}</p>
+                    </label>
+                </li>
             </ul>
         </li>
     </div>
@@ -68,8 +80,13 @@ for (let i = 0; i < questions.length; i++) {
 // render quiz
 quizEl.innerHTML = htmlQuizData
 
-// make basic quiz first
-// make function that dynamically goes through each question until finished
+function checkAnswer() {
+    const ele = document.querySelector('#\\30 \\30 ')  // I hate unicode. 
+    console.log(ele.textContent)  // RETURN WORK HERE, how the heck am I gonna gather the answers properly?
+    // GIT commit? made selecting for questions
+    const allChecked = document.querySelectorAll('.answer-label.checked')
+    console.log(allChecked)
+}
 
 // will be needed for "questions" variable
 function findQuiz(word) {
@@ -91,3 +108,10 @@ function findQuiz(word) {
     return
 }
 
+function submitAndCheckAnswers() {
+    // given length of the quiz, loop by querySelector using (XY) as ID's, where x is question, y is answer.
+}
+
+function writeThing() {
+    console.log("clicked, gather info")
+}

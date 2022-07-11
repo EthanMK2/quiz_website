@@ -16,23 +16,50 @@ li {
     max-width: fit-content;
 }
 
+p {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-size: 2rem;
+    border-radius: 5%;
+}
+
 .question-div-el {
-    padding: 20px;
+    padding: 0;
+    margin: 4rem;
+    background-color: rgb(224, 231, 252);
+    border-radius: 3%;
 }
 
 .question-el {
-    background-color: green;
     margin: auto;
 }
 
 .answer-el {
-    background-color: green;
     margin: auto;
     padding: 2px;
+    /* cursor: pointer; */
 }
 
 .answers-ul-el input{
     opacity: 0;
     width: 0;
     height: 0;
+}
+
+.answer-label {
+    cursor: pointer;
+}
+
+.answer-label p:hover {
+    display: block;
+    background-color: lightblue;
+}
+
+.answer-label p:active {
+    background-color: rgb(153, 191, 204);
+}
+
+.answer-label input:checked ~ p{
+    background-color: lightblue;
 }
