@@ -1,10 +1,12 @@
 body {
     background-color: aliceblue;
     text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 h1 {
     color: olive;
+    padding: 3rem 0;
 }
 
 ul {
@@ -24,21 +26,34 @@ p {
     border-radius: 5%;
 }
 
+
+
 .question-div-el {
     padding: 0;
-    margin: 4rem;
-    background-color: rgb(224, 231, 252);
+    margin: auto;
+    margin-bottom: 2rem;
+    border-style: solid;
+    border-color: black;
+    border-width: .15rem;
     border-radius: 3%;
+    background-color: whitesmoke;
+    max-width: 50rem;
 }
 
 .question-el {
     margin: auto;
+    padding-bottom: 2rem;
+}
+
+.question-text {
+    color: olive;
+    padding-top: 1.5rem;
+    font-family: 'Albert Sans', sans-serif;
 }
 
 .answer-el {
     margin: auto;
     padding: 2px;
-    /* cursor: pointer; */
 }
 
 .answers-ul-el input{
@@ -51,15 +66,66 @@ p {
     cursor: pointer;
 }
 
+.answer-label p {
+    padding: .5rem 2rem;
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
 .answer-label p:hover {
     display: block;
     background-color: lightblue;
 }
 
 .answer-label p:active {
-    background-color: rgb(153, 191, 204);
+    /* background-color: rgb(153, 191, 204); */
+    position: relative;
+    left: .15rem;
+    top: .15rem;
 }
 
 .answer-label input:checked ~ p{
     background-color: lightblue;
+}
+
+#check-answers-btn {
+    border: none;
+    border-radius: 60px;
+    padding: .5rem;
+    background-color: lightgray;
+    font-size: 1rem;
+    font-family: 'Albert Sans', sans-serif;
+    font-weight: 500;
+    margin-bottom: 4rem;
+}
+
+#check-answers-btn:hover {
+    background-color: rgb(102, 163, 102);
+}
+
+#check-answers-btn:active {
+    background-color: green;
+    position: relative;
+    top: .15rem;
+}
+
+#return-btn {
+    border: none;
+    border-radius: 60px;
+    padding: .5rem;
+    background-color: lightgray;
+    font-size: 1rem;
+    font-family: 'Albert Sans', sans-serif;
+    font-weight: 500;
+    margin-bottom: 4rem;
+}
+
+#return-btn:hover {
+    background-color: rgb(102, 163, 102);
+}
+
+#return-btn:active {
+    background-color: green;
+    position: relative;
+    top: .15rem;
 }

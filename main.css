@@ -92,3 +92,17 @@ button:active {
 div ul li button {
     margin: 10px;
 }
+
+#reset-score-btn {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: none;
+    color: white;
+    background-color: rgb(218, 2, 2);
+    border-radius: 60px;
+}
+
+#reset-score-btn:active {
+    position: relative;
+    background-color: rgb(182, 0, 0);
+    top: .15rem;
+}

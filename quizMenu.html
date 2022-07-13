@@ -6,9 +6,11 @@
     <link rel="stylesheet" href="quizMenu.css">
   </head>
   <body>
-    <h1>Quiz Title</h1>
+    <h1 id="quiz-title"></h1>
     <ul id="quiz-el" lang="fr"></ul>
-    <button onclick="checkAnswer()">Check Answer</button>
+    <div id="submit-div">
+      <button onclick="checkAnswers()" id="check-answers-btn">Check Answers</button>
+    </div>
     <script src="quizMenu.js"></script>
   </body>
 </html>
