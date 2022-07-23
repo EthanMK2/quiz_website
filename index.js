@@ -38,6 +38,11 @@ resetBtn.addEventListener("click", function() {
     setScore()
 })
 
+function clickedUserQuiz(nameOfQuiz) {
+    sessionStorage.setItem("currentQuiz", nameOfQuiz)
+    location.href = "quizMenu.html"
+}
+
 standardPackage = {
     geography: {
         questionOne: {
@@ -71,6 +76,11 @@ standardPackage = {
             question: "Which empire was NOT dismantled after World War One?",
             answer: "French",
             wrongs: ["Ottoman", "Russian", "German"]
+        },
+        questionFour: {
+            question: "What year was the Declaration of Independence signed?",
+            answer: "1776",
+            wrongs: ["1812", "1944", "1673"]
         }
     },
     french: {
@@ -98,3 +108,20 @@ setScore()
 
 standard = JSON.stringify(standardPackage)
 localStorage.setItem("standardPackage", standard)
+
+if (!localStorage.getItem("createdQuizzes") || (JSON.parse(localStorage.getItem("createdQuizzes")).length == 0)) {
+    localStorage.setItem("createdQuizzes", "[]")
+    const createdEl = document.getElementById("user-quiz-list")
+    createdEl.innerHTML = `<p>No quizzes created yet.</p>`
+} else {
+    let createdQuizList = JSON.parse(localStorage.getItem("createdQuizzes"))
+    let htmlString = ``
+    for (let i = 0; i < createdQuizList.length; i++) {
+        htmlString += `
+        <li>
+            <button onclick="clickedUserQuiz('${createdQuizList[i].quizName}')">${createdQuizList[i].quizName}</button>
+        </li>
+        `
+    }
+    document.getElementById("user-quiz-list").innerHTML = htmlString
+}

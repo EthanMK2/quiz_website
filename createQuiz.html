@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="createQuiz.css">
+  </head>
+  <body>
+    <h1>Quiz Creator</h1>
+    <label for="quiz-name">Quiz Name:</label>
+    <input type="text" id="quiz-name">
+    <ul id="quiz-list">
+      <li id="0" class="question">
+        <label for="00">Question:</label>
+        <input type="text" id="00">
+        <button onclick="deleteQuestion('0')">Delete</button>
+        <br>
+        <label for="01">Answer:</label>
+        <input type="text" id="01">
+        <br>
+        <label for="02">Option:</label>
+        <input type="text" id="02">
+        <br>
+        <label for="03">Option:</label>
+        <input type="text" id="03">
+        <br>
+        <label for="04">Option:</label>
+        <input type="text" id="04">
+      </li>
+    </ul>
+    <button onclick="addQuestion()">Add Question</button>
+    <br>
+    <button onclick="createQuiz()">CREATE QUIZ</button>
+    <script src="createQuiz.js"></script>
+  </body>
+</html>

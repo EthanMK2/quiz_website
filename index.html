@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Ethan's Quiz Website</title>
+    <title>Quizzes and Questions</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300&family=Bebas+Neue&family=EB+Garamond&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
   </head>
   <body>
-    <h1>Ethan's Quiz Website</h1>
-    <h2>Welcome to my quiz website.</h2>
+    
+    <div id="navbar">
+      <h1>Q++</h1>
+    </div>
+    
+    <div id="statement">
+      <h2>Thousands Of Quizzes. <br> Millions Of Questions.</h2>
+      <p id="statement-caption">Browse and take quizzes from a variety of subjects. Create quizzes for yourself, or share them with others.</p>
+    </div>
+    
     <div id="existing-quizzes">
-      <label for="existing">Take a Quiz</label>
+      <label id="existing-header">Take a Quick Quiz</label>
       <ul class="quiz-list">
         <li><button onclick="location.href='quizMenu.html'" id="geography">Geography</button></li>
         <li><button onclick="location.href='quizMenu.html'" id="history">History</button></li>
         <li><button onclick="location.href='quizMenu.html'" id="french">French Language</button></li>
       </ul>
     </div>
+    
     <div id="create-quiz">
-      <label for="create">Make a Quiz</label>
+      <p id="create-a-quiz">Create a Quiz</p>
       <br>
-      <button>Create 5 Question Quiz</button>
+      <p id="create-caption">Create a multiple choice quiz from scratch using a flexible tool.</p>
       <br>
-      <button>Create 10 Question Quiz</button>
-      <br>
-      <button>Create 15 Question Quiz</button>
+      <button onclick="location.href='createQuiz.html'" id="create-btn">Start Creating</button>
     </div>
+
+    <div id="user-quiz-div">
+      <p>Take One of Your Quizzes</p>
+      <br>
+      <ul id="user-quiz-list"></ul>
+    </div>
+
     <div id="score-el">
       <label for="score">Score</label>
       <p id="correct">0</p>
