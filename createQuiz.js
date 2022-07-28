@@ -7,21 +7,22 @@ function additionalQuestion() {  // closure to secure uniqueness of question/ans
         newQuestion.id = `${questionNumber}`
         newQuestion.className = "question"
         newQuestion.innerHTML = `
+        <button onclick="deleteQuestion('${questionNumber}')" class="delete-btn">Delete</button>
+        <br>
         <label for="${questionNumber}0">Question:</label>
-        <input type="text" id="${questionNumber}0">
-        <button onclick="deleteQuestion('${questionNumber}')">Delete</button>
+        <input type="text" id="${questionNumber}0" class="question-text">
         <br>
         <label for="${questionNumber}1">Answer:</label>
-        <input type="text" id="${questionNumber}1">
+        <input type="text" id="${questionNumber}1" class="option">
         <br>
         <label for="${questionNumber}2">Option:</label>
-        <input type="text" id="${questionNumber}2">
+        <input type="text" id="${questionNumber}2" class="option">
         <br>
         <label for="${questionNumber}3">Option:</label>
-        <input type="text" id="${questionNumber}3">
+        <input type="text" id="${questionNumber}3" class="option">
         <br>
         <label for="${questionNumber}4">Option:</label>
-        <input type="text" id="${questionNumber}4">
+        <input type="text" id="${questionNumber}4" class="option">
         `
         quizList.append(newQuestion)
         questionNumber++
@@ -52,9 +53,11 @@ function createQuiz() {  // based on how the html children are structured above
 
     for (let i = 0; i < questions.length; i++) {
         const childrenOfQuestions = questions[i].children
-        const questionTextOfEach = childrenOfQuestions[1].value  // if structure changed above, these need a change too
-        const questionAnswerOfEach = childrenOfQuestions[5].value
+        const questionTextOfEach = childrenOfQuestions[3].value  // if structure changed above, these need a change too
+        const questionAnswerOfEach = childrenOfQuestions[6].value
         let currentQuestionNumber = `question${1 + i}`
+        
+        console.log(childrenOfQuestions)
 
         quizObject.questions[`${currentQuestionNumber}`] = {}
 
@@ -63,7 +66,7 @@ function createQuiz() {  // based on how the html children are structured above
 
         quizObject.questions[`${currentQuestionNumber}`].wrongs = []
 
-        for (let j = 6; j < childrenOfQuestions.length; j++) {
+        for (let j = 7; j < childrenOfQuestions.length; j++) {
             if (childrenOfQuestions[j].tagName === "INPUT") {
                 quizObject.questions[`${currentQuestionNumber}`].wrongs.push(childrenOfQuestions[j].value)
             }

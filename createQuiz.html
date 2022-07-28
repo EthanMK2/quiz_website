@@ -2,7 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300&family=Bebas+Neue&family=EB+Garamond&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="createQuiz.css">
+    <title>Quiz Creator</title>
   </head>
   <body>
     <h1>Quiz Creator</h1>
@@ -10,26 +12,27 @@
     <input type="text" id="quiz-name">
     <ul id="quiz-list">
       <li id="0" class="question">
+        <button onclick="deleteQuestion('0')" class="delete-btn">Delete</button>
+        <br>
         <label for="00">Question:</label>
-        <input type="text" id="00">
-        <button onclick="deleteQuestion('0')">Delete</button>
+        <input type="text" id="00" class="question-text">
         <br>
         <label for="01">Answer:</label>
-        <input type="text" id="01">
+        <input type="text" id="01" class="option">
         <br>
         <label for="02">Option:</label>
-        <input type="text" id="02">
+        <input type="text" id="02" class="option">
         <br>
         <label for="03">Option:</label>
-        <input type="text" id="03">
+        <input type="text" id="03" class="option">
         <br>
         <label for="04">Option:</label>
-        <input type="text" id="04">
+        <input type="text" id="04" class="option">
       </li>
     </ul>
-    <button onclick="addQuestion()">Add Question</button>
+    <button onclick="addQuestion()" id="add-btn">Add Question</button>
     <br>
-    <button onclick="createQuiz()">CREATE QUIZ</button>
+    <button onclick="createQuiz()" id="create-btn">CREATE QUIZ</button>
     <script src="createQuiz.js"></script>
   </body>
 </html>
