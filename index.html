@@ -17,37 +17,45 @@
       <h2>Thousands Of Quizzes. <br> Millions Of Questions.</h2>
       <p id="statement-caption">Browse and take quizzes from a variety of subjects. Create quizzes for yourself, or for a class.</p>
     </div>
-    
-    <div id="existing-quizzes">
-      <label id="existing-header">Take a Quick Quiz</label>
-      <ul class="quiz-list">
-        <li><button onclick="location.href='quizMenu.html'" id="geography">Geography</button></li>
-        <li><button onclick="location.href='quizMenu.html'" id="history">History</button></li>
-        <li><button onclick="location.href='quizMenu.html'" id="french">French Language</button></li>
-      </ul>
-    </div>
-    
-    <div id="create-quiz">
-      <p id="create-a-quiz">Create a Quiz</p>
-      <br>
-      <p id="create-caption">Create a multiple choice quiz from scratch using a flexible tool.</p>
-      <br>
-      <button onclick="location.href='createQuiz.html'" id="create-btn">Start Creating</button>
+
+    <div class="container">
+      
+      <div class="rows">
+        <div id="existing-quizzes" class="row-item">
+          <label id="existing-header">Take a Quick Quiz</label>
+          <ul class="quiz-list">
+            <li><button onclick="location.href='quizMenu.html'" id="geography">Geography</button></li>
+            <li><button onclick="location.href='quizMenu.html'" id="history">History</button></li>
+            <li><button onclick="location.href='quizMenu.html'" id="french">French Language</button></li>
+          </ul>
+        </div>
+        
+        <div id="create-quiz" class="row-item">
+          <p id="create-a-quiz">Create a Quiz</p>
+          <br>
+          <p id="create-caption">Create a multiple choice quiz from scratch using a flexible tool.</p>
+          <br>
+          <button onclick="location.href='createQuiz.html'" id="create-btn">Start Creating</button>
+        </div>
+      </div>
+
+      <div class="rows">
+        <div id="user-quiz-div" class="row-item">
+          <p>Take One of Your Quizzes</p>
+          <br>
+          <ul id="user-quiz-list"></ul>
+        </div>
+
+        <div id="score-el" class="row-item">
+          <label for="score">Score</label>
+          <p id="correct">0</p>
+          <hr id="divider">
+          <p id="attempted">0</p>
+          <button id="reset-score-btn">RESET SCORE</button>
+        </div>
+      </div>
     </div>
 
-    <div id="user-quiz-div">
-      <p>Take One of Your Quizzes</p>
-      <br>
-      <ul id="user-quiz-list"></ul>
-    </div>
-
-    <div id="score-el">
-      <label for="score">Score</label>
-      <p id="correct">0</p>
-      <hr id="divider">
-      <p id="attempted">0</p>
-      <button id="reset-score-btn">RESET SCORE</button>
-    </div>
     <script src="index.js"></script>
   </body>
 </html>
